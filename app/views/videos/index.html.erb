@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>Videos From Zype API</h2>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Video Thumbnail</th>
+        <th>Video Title</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @videos.each_with_index do |video, ind| %>
+      <tr>
+        <td><%= ind + 1 %></td>
+        <td>
+          <img src="<%= video['thumbnails'][0]['url'] %>" class="img-thumbnail video" alt="Cinque Terre">
+        </td>
+        <td><%= video['title'] %></td>
+        <td>
+          <%= link_to "Play Video", video_path(video['_id']), class: 'btn btn-success' %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

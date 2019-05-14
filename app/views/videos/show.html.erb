@@ -1,0 +1,14 @@
+<div class="container">
+  <h2><%= @video['title'] %></h2>
+  <%= link_to "Return", videos_path, class: 'btn btn-info return_btn' %>
+
+  <% if @video['subscription_required'] %>
+      <%= render 'play'%>
+  <% else %>
+      <% if @access_token %>
+          <%= render 'subscription_play'%>
+      <% else %>
+          <%= render 'login'%>
+      <% end %>
+  <% end %>
+</div>
