@@ -1,22 +1,22 @@
-#default: &default
-#  adapter: postgresql
-#  encoding: unicode
-#  pool: 5
-#  host: localhost
-#  username: postgres
-#  password: postgres
-#
-#production:
-#  <<: *default
-#  host: sever_host
-#  database: zype_production
-#  username: server_username
-#  password: server_password
-#
-#development:
-#  <<: *default
-#  database: zype_development
-#
-#test:
-#  <<: *default
-#  database: zype_test
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: localhost
+  username: postgres
+  password: postgres
+
+production:
+  <<: *default
+  host: sever_host
+  database: zype_production
+  username: server_username
+  password: server_password
+
+development:
+  <<: *default
+  database: zype_development
+
+test:
+  <<: *default
+  database: zype_test
